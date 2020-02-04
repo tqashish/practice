@@ -2,23 +2,29 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { PracComponent } from './prac/prac.component';
+import { SecondComponent } from './second/second.component';
+import { ThirdComponent } from './third/third.component';
+import { RouterModule, Routes } from '@angular/router';
+
+const appRoutes: Routes =
+[
+{path: 'First',component:SecondComponent},
+{path:'Second',component:ThirdComponent}
+];
 
 @NgModule({
   declarations: [
     AppComponent,
-    PracComponent
+    SecondComponent,
+    ThirdComponent,
+  
   ],
   imports: [
-    BrowserModule
+    BrowserModule,RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { 
 
 
-
-
-  
-}
+export class AppModule { }
